@@ -21,7 +21,7 @@ function sendMessage() {
         const btnDiv = document.createElement('div');
         btnDiv.setAttribute('class', 'chat-button');
         btnDiv.setAttribute('id', 'chatBtn');
-        const btnArr = ["▶ 도슨튼 영상", "▤ 한국 문화 퀴즈"];
+        const btnArr = ["▶ 도슨트 영상", "▤ 한국 문화 퀴즈"];
         for(var i=0; i<btnArr.length; i++) {
             const newBtn = setBtn(btnArr[i]);
             if(i == 0) {
@@ -74,7 +74,7 @@ function appendMessage(obj, message) {
         console.log('create');
     }
     chatMsg.style.display = 'block';
-    // chatMsg.scrollTop = chatMsg.scrollHeight; // 스크롤 맨 아래로 이동
+    chatMsg.scrollTop = chatMsg.scrollHeight; // 스크롤 맨 아래로 이동
 }
 
 /* 사용자가 선택할 버튼 생성 */
@@ -115,10 +115,10 @@ function getQuestion(idx) {
     return qeustions[idx];
 }
 
-/* 도스튼 영상 */
+/* 도슨트 영상 */
 function viewDst() {
-    var divElement = document.createElement('div');
-    divElement.setAttribute('class', "video-container");
+    var videoDiv = document.createElement('div');
+    videoDiv.setAttribute('class', "video-container");
 
     var iframeElement = document.createElement('iframe');
     iframeElement.src = "https://studio.d-id.com/share?id=ac05de7901a2ec06bdfbf9cc46aaf96d&utm_source=copy";
@@ -126,10 +126,43 @@ function viewDst() {
     iframeElement.height = "600";
     iframeElement.classList.add("video-iframe");
 
-    divElement.appendChild(iframeElement);
-    document.getElementById('chatMessage').appendChild(divElement);
+    videoDiv.appendChild(iframeElement);
+    document.getElementById('chatMessage').appendChild(videoDiv);
 }
 
+/* 퀴즈 영역 */
+var quizIdx = 0;
 function viewQuiz() {
+    var quizArea = document.createElement('div');
+    var quizDiv = document.getElementById('quiz-container');
+    
+    for(var i=0; i<3; i++) {
+        console.log(i + " : " + quizIdx);
+        var quiz = document.getElementById('quiz'+(quizIdx+1));
+        if(i == quizIdx) {
+            quiz.style.dispaly = "block";
+        } else {
+            quiz.style.dispaly = "none";
+        }
+    }
 
+    quizArea.setAttribute('id', 'quiz-container');
+    quizArea.innerHTML = quizDiv.innerHTML;
+
+    const parentDiv = document.getElementById('chatMessage');
+    // const preQuiz = parentDiv.getElementById('quiz-container');
+    // preQuiz.remove();
+    parentDiv.appendChild(quizArea);
+}
+
+function goAnswer(answerYn) {
+    var answers = ['N', 'Y', 'Y'];
+    if(answers[quizIdx] == answerYn) {
+        alert("와우! 정답이에요~");
+    } else {
+        alert("안타깝지만 틀렸어요.");
+    }
+    quizIdx = quizIdx + 1;
+
+    viewQuiz();
 }

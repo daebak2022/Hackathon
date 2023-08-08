@@ -17,7 +17,6 @@
                     fill="black"></path>
             </svg>
             <p class="leftTxt">채팅</p>
-            <p class="rightTxt">로그인</p>
         </div>
         <!-- 메뉴 Start -->
 
@@ -65,6 +64,19 @@
         <!-- 입력창 End -->
         
     </div>
+
+    <!-- 퀴즈 영역 Start -->
+    <div id="quiz-container" style="display:none;">
+        <div class="quiz-title">한국 문화 퀴즈</div>
+        <div class="quiz-question" id="quiz1">경주가 한국의 수도인가요?</div>
+        <div class="quiz-question" id="quiz2" style="display:none;">경주의 첨성대는 고대 신라 시대에 지어진 것이다?</div>
+        <div class="quiz-question" id="quiz3" style="display:none;">경주에 대릉원이라는 고대 왕의 무덤이 있다?</div>
+        <div class="quiz-answer-btn">
+            <button class="quiz-answer-yes" onclick="goAnswer('Y')">O</button>
+            <button class="quiz-answer-no" onclick="goAnswer('N')">X</button>
+        </div>
+    </div>
+    <!-- 퀴즈 영역 End -->
 
     <script src="chatbot.js"></script>
 </body>

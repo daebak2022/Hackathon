@@ -33,19 +33,11 @@ body {
     top: -4px;
 }
 
-.rightTxt {
-    display: inline-block;
-    color: black;
-    position: relative;
-    top: -4px;
-    left: 870px;
-}
-
 /* 인트로 Start */
 #chatIntro {
-    left: 800px;
     top: 350px;
-    position: absolute;
+    position: relative;
+    width: 100%;
 }
 
 .chat-intro-hi {
@@ -55,7 +47,6 @@ body {
     font-size: 28px;
     opacity: 1;
     text-align: center;
-    left: 180px;
     position: relative;
     margin-bottom: 15px;
 }
@@ -67,7 +58,6 @@ body {
     /* background: rgba(54,96,255,1); */
     background: rgba(35, 112, 123);
     opacity: 1;
-    position: absolute;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -79,6 +69,7 @@ body {
     font-size: 24px;
     opacity: 1;
     text-align: center;
+    margin-left: 300px;
 }
 /* 인트로 End */
 
@@ -247,3 +238,84 @@ body {
     float: left;
 }
 /* 도슨트 영상 End */
+
+/* 퀴즈 Start */
+#quiz-container {
+    width: 500px;
+    max-width: 640px;
+    position: relative;
+    background-color: rgba(245, 245, 245);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    float: left;
+    clear: right;
+    margin: 10px;
+    padding: 20px;
+}
+.quiz-title {
+    position: relative;
+    color: #000;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 5px 0px;
+}
+.quiz-question {
+    position: relative;
+    float: left;
+    clear: left;
+    color: #000;
+    margin: 20px 0px;
+}
+.quiz-answer-btn {
+    position: relative;
+    float: left;
+    clear: left;
+}
+.quiz-answer-yes {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    float: left;
+    font-size: 30px;
+    vertical-align: middle;
+    color: #fff;
+    background-color:rgba(35, 112, 123);
+    border: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin: 3px;
+}
+.quiz-answer-yes:hover {
+    border-color:rgba(21, 64, 71);
+    border-width: thick;
+    border-style: solid;
+    cursor: pointer;
+}
+.quiz-answer-no {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    float: left;
+    font-size: 25px;
+    vertical-align: middle;
+    background-color: #fff;
+    border-color:rgba(35, 112, 123);
+    border-width: thin;
+    border-style: solid;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin: 3px;
+}
+.quiz-answer-no:hover {
+    border-color:rgba(35, 112, 123);
+    border-width: thick;
+    border-style: solid;
+    cursor: pointer;
+}
+/* 퀴즈 End */
